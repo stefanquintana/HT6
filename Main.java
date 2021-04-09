@@ -19,6 +19,7 @@ public class Main {
 		Scanner keyboard = new Scanner(System.in);
 		Operar operacion = new Operar(); 
 		// TODO Auto-generated method stub
+		// se le pide al usuario cual tipo de implementacion quiere usar 
 		System.out.println("Bienvenido a nuestro sistema inventario. Seleccione El tipo de mapa ");
 		System.out.println("1) Hashmap");
 		System.out.println("2) Treemap");
@@ -26,6 +27,7 @@ public class Main {
 		String hash= keyboard.nextLine(); 
 		operacion.SetMapa(hash);
 		boolean bool = true; 
+		// se hace mientras no se le pida salir al usuario
 		while (bool) {
 		System.out.println("Bienvenido a nuestro sistema inventario. Seleccione que desea hacer: ");
 		System.out.println("1) Agregar productos al inventario. ");
