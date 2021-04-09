@@ -10,6 +10,7 @@ import java.util.*;
 
 
 public class Operar {
+	// se crean los elementos que se utilizaran en las operaciones
 	Map<String, Productos> map; 
 	Factory<String, Productos> factory = new Factory<String, Productos>(); 
 	Scanner keyboard = new Scanner(System.in);
@@ -205,6 +206,7 @@ public class Operar {
 	}
 	
 	public void DevolverCategoria() {
+		// se imprime el producto buscado
 		System.out.println("Por favor ingrese el nombre del producto");
 		String option = keyboard.nextLine(); 
 		Set<String> set= map.keySet();
@@ -219,6 +221,7 @@ public class Operar {
 	
 	public void MostrarDatosSO() {
 		Set<String> set= map.keySet();
+		//se imprimen todos los elementos
 		for( String elemento: set) {
 			Productos prod = map.get(elemento);
 			String res= "Categoria: "+ prod.getCategoria()+". Producto: " + prod.getNombre() +  ". Cantidad: "+ String.valueOf(prod.getCantidad())+"."; 
@@ -228,6 +231,7 @@ public class Operar {
 	
 	public void MostrarDatosSOxC() {
 		Set<String> set= map.keySet();
+		//se imprimen todos los elementos si hay en invetario
 		for( String elemento: set) {
 			if (map.get(elemento).getCantidad()>0 ) {
 				Productos prod = map.get(elemento);
@@ -241,6 +245,7 @@ public class Operar {
 		
 		String[] categ = {"Bebidas ", "Carnes ", "Condimentos ", "Frutas ", "Lácteos ", "Mueble de terraza ", "Sillones de masaje "};
 		Set<String> set = map.keySet();
+		//se ordenan los datos por medio de categorias 
 		for(String elemento : categ) {
 			for( String el: set) {
 				if(map.get(el).getCategoria().equals(elemento)) {
